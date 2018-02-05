@@ -16,8 +16,7 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.letbeclear.model.JwtAuthenticationToken;
-import com.letbeclear.model.LBCLogin;
+import com.letbeclear.domain.LBCLogin;
 
 public class JwtUsernamePasswordAuthenticationFilter extends UsernamePasswordAuthenticationFilter
 {

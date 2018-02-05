@@ -3,7 +3,7 @@ package com.letbeclear.security;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import com.letbeclear.model.JwtUser;
+import com.letbeclear.domain.JwtUser;
 import com.letbeclear.model.Users;
 import com.letbeclear.service.UsersService;
 import com.letbeclear.token.config.JwtConfig;

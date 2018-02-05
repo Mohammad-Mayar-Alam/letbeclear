@@ -9,8 +9,8 @@ import javax.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.letbeclear.domain.JwtUser;
 import com.letbeclear.model.Address;
-import com.letbeclear.model.JwtUser;
 import com.letbeclear.model.UserProfile;
 import com.letbeclear.repository.AddressRepository;
 import com.letbeclear.repository.UserProfileRepository;

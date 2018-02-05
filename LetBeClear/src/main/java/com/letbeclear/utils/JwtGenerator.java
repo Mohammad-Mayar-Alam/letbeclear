@@ -1,11 +1,11 @@
-package com.letbeclear.token;
+package com.letbeclear.utils;
 
 import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import com.letbeclear.model.JwtUser;
+import com.letbeclear.domain.JwtUser;
 import com.letbeclear.token.config.JwtConfig;
 
 import io.jsonwebtoken.Claims;

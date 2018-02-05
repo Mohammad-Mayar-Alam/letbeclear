@@ -10,18 +10,18 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.letbeclear.domain.JwtUser;
 import com.letbeclear.mail.ForgotPasswordEmailSender;
 import com.letbeclear.model.Address;
-import com.letbeclear.model.JwtAuthenticationToken;
-import com.letbeclear.model.JwtUser;
-import com.letbeclear.model.ResponseSender;
 import com.letbeclear.model.UserReg;
 import com.letbeclear.model.Users;
+import com.letbeclear.response.dto.ResponseSender;
+import com.letbeclear.security.JwtAuthenticationToken;
 import com.letbeclear.security.UserDetailsImpl;
+import com.letbeclear.service.UserRegService;
 import com.letbeclear.service.UsersService;
-import com.letbeclear.token.JwtGenerator;
 import com.letbeclear.token.config.JwtConfig;
-import com.letbeclear.utils.LoginDetailsValidator;
+import com.letbeclear.utils.JwtGenerator;
 
 @RestController
 public class LoginController
@@ -36,7 +36,10 @@ public class LoginController
 	JwtConfig jwtConfig;
 	
 	@Autowired
-	private LoginDetailsValidator loginDetailsValidator;
+	UserRegService userRegService;
+	
+//	@Autowired
+//	private LoginDetailsValidator loginDetailsValidator;
 	
 	@Autowired
 	private ForgotPasswordEmailSender forgotPasswordEmailSender;
@@ -269,12 +272,14 @@ public class LoginController
 	
 	@CrossOrigin(origins="*")
 	@RequestMapping(value="/rest/forgotPassword", method=RequestMethod.POST)
-	public ResponseSender forgotEmail(@RequestBody Address addressTable)
+	public ResponseSender forgotEmail(@RequestBody Address address)
 	{
-		System.out.println("Inside forgot Password "+addressTable.getEmail());
+		System.out.println("Inside forgot Password "+address.getEmail());
 	
 		//Verifying User from DataBase
-		UserReg userReg=loginDetailsValidator.validateEmail(addressTable.getEmail());
+		//UserReg userReg=loginDetailsValidator.validateEmail(addressTable.getEmail());
+		
+		UserReg userReg=userRegService.getUserRegByEmail(address.getEmail());
 		
 		ResponseSender response = new ResponseSender();
 		
@@ -287,7 +292,7 @@ public class LoginController
 			forgotPasswordEmailSender.sendEmail(userReg.getLoginid(),userReg.getLogonpassword());
 			
 			response.setMessage("Success");
-			response.setToken(new JwtAuthenticationToken().getToken());
+			//response.setToken(new JwtAuthenticationToken().getToken());
 			response.setFlag(true);
 			
 			return response;

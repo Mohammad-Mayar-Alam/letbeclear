@@ -10,15 +10,15 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.letbeclear.model.JwtAuthenticationToken;
-import com.letbeclear.model.JwtUser;
-import com.letbeclear.model.ResponseSender;
+import com.letbeclear.domain.JwtUser;
 import com.letbeclear.request.dto.PostCommentDto;
 import com.letbeclear.response.dto.PostCommentGetResponseDto;
 import com.letbeclear.response.dto.PostCommentResponse;
+import com.letbeclear.response.dto.ResponseSender;
+import com.letbeclear.security.JwtAuthenticationToken;
 import com.letbeclear.service.PostCommentService;
 import com.letbeclear.service.PostCommentsLikeService;
-import com.letbeclear.token.JwtGenerator;
+import com.letbeclear.utils.JwtGenerator;
 
 @Controller
 public class PostCommentController 

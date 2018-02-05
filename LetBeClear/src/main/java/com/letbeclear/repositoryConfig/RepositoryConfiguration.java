@@ -13,15 +13,11 @@ import org.springframework.context.annotation.PropertySource;
 import org.springframework.core.env.Environment;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
-import org.springframework.orm.jpa.EntityManagerFactoryInfo;
 import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
-import org.springframework.orm.jpa.LocalEntityManagerFactoryBean;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import com.letbeclear.mail.ForgotPasswordEmailSender;
-import com.letbeclear.repository.PostCommentLikeRepository;
-import com.letbeclear.utils.LoginDetailsValidator;
 
 @Configuration
 @EnableTransactionManagement

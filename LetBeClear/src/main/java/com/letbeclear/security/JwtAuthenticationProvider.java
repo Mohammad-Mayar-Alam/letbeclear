@@ -12,8 +12,7 @@ import org.springframework.security.core.authority.AuthorityUtils;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Component;
 
-import com.letbeclear.model.JwtAuthenticationToken;
-import com.letbeclear.model.JwtUser;
+import com.letbeclear.domain.JwtUser;
 
 @Component
 public class JwtAuthenticationProvider extends AbstractUserDetailsAuthenticationProvider

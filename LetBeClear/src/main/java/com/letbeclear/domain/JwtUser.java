@@ -1,4 +1,4 @@
-package com.letbeclear.model;
+package com.letbeclear.domain;
 
 import org.springframework.stereotype.Component;
 

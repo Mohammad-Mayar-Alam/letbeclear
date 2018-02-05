@@ -1,4 +1,4 @@
-package com.letbeclear.model;
+package com.letbeclear.security;
 
 import java.util.Collection;
 

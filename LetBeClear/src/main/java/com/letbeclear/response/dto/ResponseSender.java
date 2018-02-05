@@ -1,4 +1,4 @@
-package com.letbeclear.model;
+package com.letbeclear.response.dto;
 
 public class ResponseSender 
 {

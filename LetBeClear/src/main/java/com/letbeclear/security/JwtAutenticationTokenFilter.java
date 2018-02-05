@@ -15,10 +15,9 @@ import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter;
 
-import com.letbeclear.model.JwtAuthenticationToken;
-import com.letbeclear.model.JwtUser;
-import com.letbeclear.token.JwtGenerator;
+import com.letbeclear.domain.JwtUser;
 import com.letbeclear.token.config.JwtConfig;
+import com.letbeclear.utils.JwtGenerator;
 
 
 public class JwtAutenticationTokenFilter extends AbstractAuthenticationProcessingFilter 
